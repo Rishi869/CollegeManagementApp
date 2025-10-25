@@ -1,9 +1,5 @@
 College Management App
 
-Description
-This is a College Management web application built using ASP.NET Core MVC and SQLite. 
-It includes features for managing Students, Teachers, Courses, and Enrollments with full CRUD operations.
-
 Features
 - Manage Students (Create, Read, Update, Delete)
 - Manage Teachers (Create, Read, Update, Delete)
