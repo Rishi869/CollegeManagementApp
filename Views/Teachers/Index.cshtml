@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CollegeApp.Models.Teachers>
+
+@{
+    ViewData["Title"] = "Teachers";
+}
+
+<h2 class="text-center mt-4">Teachers List</h2>
+
+<div class="text-end mb-3">
+    <a asp-action="Create" class="btn btn-success">+ Add New Teacher</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th style="width:180px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model)
+        {
+            <tr>
+                <td>@t.Name</td>
+                <td>@t.Department</td>
+                <td>@t.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@t.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@t.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <p class="text-center text-muted">No teachers available.</p>
+}
